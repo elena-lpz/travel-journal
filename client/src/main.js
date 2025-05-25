@@ -314,7 +314,7 @@ function closeModal() {
 setTimeout(function () {
   document.querySelector(".loadingScreen").style.display = "none";
   document.body.style.overflow = "auto";
-}, 5000);
+}, 6000);
 
 // window.addEventListener('load', function() {
 //   loadingScreen.style.display = 'none';

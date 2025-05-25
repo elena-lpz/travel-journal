@@ -51,7 +51,7 @@
   background-color: var(--grey-6);
 }
 
-/* text animation */
+/* text animation https://prismic.io/blog/css-text-animations*/
 .cursor {
   position: relative;
   width: 24em;
@@ -103,10 +103,18 @@
   font-weight: 600;
   color: var(--text-color-heading);
   font-size: 32px;
-  background-color: var(--colour-background-beige);
+  /* background-color: var(--colour-background-beige); */
 }
+
+@media (width >= 768px) {
+  .typing-text {
+    font-size: 48px;
+    /* background-color: var(--colour-background-beige); */
+  }
+}
+
 .fade-in-image {
-  animation: fadeIn 5s;
+  animation: fadeIn 6s;
 }
 
 @keyframes fadeIn {
@@ -556,7 +564,7 @@ input {
 }
 
 select {
-  height: 3rem;
+  height: 3rem !important;
   border: 1px solid var(--grey-6);
   border-radius: 4px;
   font-size: 1rem;
