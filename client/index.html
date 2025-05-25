@@ -24,25 +24,35 @@
       <img
         class="bg-vector-1"
         src="./src/assets/images/bg-vector-1.png"
-        alt="illustration of a pollaroid picture"
+        alt="a vector image of waves"
       />
     </header>
-    <section id="intro-section" class="intro-section">
+    <div class="loadingScreen">
+      <div class="triangle top-left"></div>
+      <div class="triangle top-right"></div>
+      <div class="triangle bottom-left"></div>
+      <div class="triangle bottom-right"></div>
+      <img
+        class="cover-img fade-in-image"
+        src="./src/assets/images/start-screen-img.png"
+        alt="illustration of a pollaroid picture"
+      />
+      <div class="text-bg">
+        <p class="typing-text cursor typewriter-animation">
+          My travel journal...
+        </p>
+      </div>
+    </div>
+    <!-- <section id="intro-section" class="intro-section">
       <img
         class="cover-img"
         src="./src/assets/images/start-screen-img.png"
         alt="illustration of a pollaroid picture"
       />
-      <!-- <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        obcaecati quibusdam itaque at voluptates earum ratione adipisci delectus
-        inventore dicta repellendus maiores, animi minima cumque, corrupti est
-        aperiam alias excepturi!
-      </p> -->
-      <button id="open-button" class="open-button">
+<button id="open-button" class="open-button">
         Open<i class="fa-solid fa-arrow-right"></i>
       </button>
-    </section>
+    </section> -->
     <section id="form-modal" class="modal-backdrop hidden">
       <form id="travel-form" class="travel-form">
         <fieldset class="form">
@@ -80,7 +90,7 @@
       </form>
     </section>
     <!-- top section of the entry board  -->
-    <section id="trips-view" class="trip-view hidden">
+    <section id="trips-view" class="trip-view">
       <p class="intro-text">
         Scroll through my adventures and memories from around the world 🌍✈️
         From cozy cafés in hidden corners to breathtaking views at the top of
@@ -93,6 +103,6 @@
       </button>
     </section>
     <!-- section with the entries  -->
-    <section id="trips-section" class="trips-container hidden"></section>
+    <section id="trips-section" class="trips-container"></section>
   </body>
 </html>

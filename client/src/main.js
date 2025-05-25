@@ -33,6 +33,7 @@ const colourClasses = [
   { className: "bg-green trip-info" },
   { className: "bg-blue trip-info" },
   { className: "bg-purple trip-info" },
+  { className: "bg-orange trip-info" },
 ];
 
 // select the form from the dom
@@ -271,19 +272,19 @@ const introSection = document.getElementById("intro-section");
 
 // wanted to make the transition a bit smoother. Still not 100% happy as the info I get from the DB takes a bit too long to load but it's a bit better
 
-openButton.addEventListener("click", () => {
-  console.log("button clicked");
-  introSection.classList.remove("visible");
-  introSection.classList.add("hidden");
+// openButton.addEventListener("click", () => {
+//   console.log("button clicked");
+//   introSection.classList.remove("visible");
+//   introSection.classList.add("hidden");
 
-  tripsSection.classList.remove("hidden");
-  tripsSection.classList.add("visible");
+//   tripsSection.classList.remove("hidden");
+//   tripsSection.classList.add("visible");
 
-  tripsView.classList.remove("hidden");
-  tripsView.classList.add("visible");
+//   tripsView.classList.remove("hidden");
+//   tripsView.classList.add("visible");
 
-  document.body.style.overflow = "auto";
-});
+//   document.body.style.overflow = "auto";
+// });
 
 const addButton = document.getElementById("add-button");
 const closeButton = document.getElementById("close-button");
@@ -307,3 +308,14 @@ function closeModal() {
   travelForm.classList.add("hidden");
   document.body.style.overflow = "auto"; // makes scrolling work again
 }
+
+// var loadingScreen = document.querySelector(".loadingScreen");
+
+setTimeout(function () {
+  document.querySelector(".loadingScreen").style.display = "none";
+  document.body.style.overflow = "auto";
+}, 5000);
+
+// window.addEventListener('load', function() {
+//   loadingScreen.style.display = 'none';
+// })

@@ -22,6 +22,7 @@
   --pastel-green: #d0f4de;
   --pastel-blue: #a9def9;
   --pastel-purple: #e4c1f9;
+  --pastel-orange: #fac898;
   /* --pastel-pink: rgba(255, 153, 200, 0.6);
   --pastel-yellow: rgba(252, 246, 189, 0.6);
   --pastel-green: rgba(208, 244, 222, 0.6);
@@ -33,6 +34,141 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+/* scrollbar styling - https://css-tricks.com/classy-and-cool-custom-css-scrollbars-a-showcase/ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: var(--grey-8);
+  border: 1px solid var(--grey-6);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--grey-6);
+}
+
+/* text animation */
+.cursor {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid var(--grey-4);
+  font-size: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+/* Animation */
+.typewriter-animation {
+  animation: typewriter 5s steps(20) 1s 1 normal both,
+    blinkingCursor 500ms steps(20) infinite normal;
+}
+@media (width >= 760px) {
+  .typewriter-animation {
+    animation: typewriter 5s steps(40) 1s 1 normal both,
+      blinkingCursor 500ms steps(40) infinite normal;
+  }
+}
+
+@media (width >= 992px) {
+  .typewriter-animation {
+    animation: typewriter 3s steps(40) 1s 1 normal both,
+      blinkingCursor 500ms steps(40) infinite normal;
+  }
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkingCursor {
+  from {
+    border-right-color: var(--grey-4);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typing-text {
+  margin-top: 5rem;
+  font-weight: 600;
+  color: var(--text-color-heading);
+  font-size: 32px;
+  background-color: var(--colour-background-beige);
+}
+.fade-in-image {
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* text animation ends  */
+
+.loadingScreen {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--colour-background-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+/* Wanted to add triangles to make it look more like a book  */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.triangle.top-left {
+  top: 0;
+  left: 0;
+  border-top: 60px solid var(--text-color-heading); /* adjust size/color */
+  border-right: 60px solid transparent;
+}
+
+.triangle.top-right {
+  top: 0;
+  right: 0;
+  border-top: 60px solid var(--text-color-heading);
+  border-left: 60px solid transparent;
+}
+
+.triangle.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom: 60px solid var(--text-color-heading);
+  border-right: 60px solid transparent;
+}
+
+.triangle.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom: 60px solid var(--text-color-heading);
+  border-left: 60px solid transparent;
 }
 
 .form {
@@ -89,6 +225,11 @@ header {
 
 .cover-img {
   width: 70dvw;
+}
+@media (width >= 768px) {
+  .cover-img {
+    max-width: 300px;
+  }
 }
 
 @media (width >= 992px) {
@@ -172,8 +313,8 @@ h2 {
   bottom: 10vh;
   z-index: 20;
   font-size: 1rem;
-  background-color: var(--text-color-heading);
-  color: var(--colour-background-beige);
+  /* background-color: var(--text-color-heading); */
+  /* color: var(--colour-background-beige); */
   font-weight: 600;
   /* border: 2px solid var(--text-color-heading); */
   /* box-shadow: 0 0 20px rgb(89, 89, 89); */
@@ -500,6 +641,9 @@ fieldset {
 
 .bg-purple {
   background-color: var(--pastel-purple);
+}
+.bg-orange {
+  background-color: var(--pastel-orange);
 }
 
 .close-button:hover {
