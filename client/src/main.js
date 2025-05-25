@@ -52,7 +52,7 @@ function handleSubmit(event) {
   //prepare the formValues Object to be sent to the server,
 
   //we are going to use fetch to connect to our POST route in the server
-  fetch("http://localhost:8080/newTrip", {
+  fetch("https://travel-journal-ojly.onrender.com/newTrip", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -116,7 +116,9 @@ travelForm.addEventListener("submit", handleSubmit);
 
 // Get the trip data from the server and display it (render it) on the page
 async function getTrips() {
-  const response = await fetch("http://localhost:8080/trips");
+  const response = await fetch(
+    "https://travel-journal-ojly.onrender.com/trips"
+  );
   // console.log(Response);
   const trips = await response.json();
   // console.log(trips);
@@ -219,9 +221,12 @@ addEntry.addEventListener("click", () => {
 
 // Deletes data by id
 async function deleteData(id) {
-  const response = await fetch(`http://localhost:8080/trips/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://travel-journal-ojly.onrender.com/trips/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
   const trips = await response.json();
   return trips;
 }
