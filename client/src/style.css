@@ -154,7 +154,7 @@
 .triangle.top-left {
   top: 0;
   left: 0;
-  border-top: 60px solid var(--text-color-heading); /* adjust size/color */
+  border-top: 60px solid var(--text-color-heading);
   border-right: 60px solid transparent;
 }
 

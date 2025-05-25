@@ -131,7 +131,7 @@ function getRandomColour(colourClasses) {
   return randomIndex;
 }
 
-// Something really funny (no one was laughing) happened here, I originally had it set so that my entries would take 1 colour from the array each. I was happy with it until I realised I could not see more than 5 entries at a time, I needed to delete 1 entry so that the colour would become "available" again. It took me a while to figure out what was happening. I ideally would like for the colours to not be random so that they dont repeat, but I could not figure out how to restart the array. It's probably a very simple thing to do but oh well, I'll come back to it in the future
+// Something really funny (no one was laughing) happened here, I originally had it set so that my entries would take 1 colour from the array each. I was happy with it until I realised I could not see more than 5 entries at a time, I needed to delete 1 entry so that the colour would become "available" again. It took me a while to figure out what was happening. I ideally would have liked for the colours to not be random so that they dont repeat, but I could not figure out how to restart the array. It's probably a very simple thing to do but oh well, I'll come back to it in the future
 
 //create all elements
 async function createTripElements(arrayofData) {
@@ -152,16 +152,16 @@ async function createTripElements(arrayofData) {
 
     //update content values
 
-    tripDestination.textContent = item.destination; //(name is the name of the column in our DB)
+    tripDestination.textContent = item.destination;
     //need to format date before updating text content
     const date = new Date(item.date_of_visit);
     const formattedDate = date.toLocaleDateString("en-GB");
     tripDate.textContent = `When: ${formattedDate}`;
-    // tripDate.textContent = item.date_of_visit; //(name is the name of the column in our DB)
-    tripStayLength.textContent = `Length of stay: ${item.stay_length} day(s)`; //(name is the name of the column in our DB)
-    tripFavouriteExp.textContent = `Favourite experience: ${item.favourite_experience}`; //(name is the name of the column in our DB)
-    tripVisitAagin.textContent = `Would visit again: ${item.visit_again}`; //(name is the name of the column in our DB)
-    tripGeneralThoughts.textContent = `General thoughts: ${item.general_thoughts}`; //(name is the name of the column in our DB)
+    // tripDate.textContent = item.date_of_visit;
+    tripStayLength.textContent = `Length of stay: ${item.stay_length} day(s)`;
+    tripFavouriteExp.textContent = `Favourite experience: ${item.favourite_experience}`;
+    tripVisitAagin.textContent = `Would visit again: ${item.visit_again}`;
+    tripGeneralThoughts.textContent = `General thoughts: ${item.general_thoughts}`;
     tripContainer.classList.add("trip-info");
     tripTitleContainer.classList.add("trip-title");
     deleteIcon.classList.add("fa-solid", "fa-trash-can");
@@ -272,6 +272,8 @@ const introSection = document.getElementById("intro-section");
 
 // wanted to make the transition a bit smoother. Still not 100% happy as the info I get from the DB takes a bit too long to load but it's a bit better
 
+// Originally I did not have a loading screen but a start screen with a button "open" - it was a bit annoying especially when refreshing the page so decided to go for a timed loading screen instead
+
 // openButton.addEventListener("click", () => {
 //   console.log("button clicked");
 //   introSection.classList.remove("visible");
@@ -309,13 +311,9 @@ function closeModal() {
   document.body.style.overflow = "auto"; // makes scrolling work again
 }
 
-// var loadingScreen = document.querySelector(".loadingScreen");
+//loading screen
 
 setTimeout(function () {
   document.querySelector(".loadingScreen").style.display = "none";
   document.body.style.overflow = "auto";
 }, 6000);
-
-// window.addEventListener('load', function() {
-//   loadingScreen.style.display = 'none';
-// })
