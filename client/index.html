@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="#" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="./src/main.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My travel journal</title>
+  </head>
+  <body>
+    <header>
+      <h1>My travel Journal</h1>
+      <img
+        class="bg-vector-1"
+        src="./src/assets/images/bg-vector-1.png"
+        alt="illustration of a pollaroid picture"
+      />
+    </header>
+    <section id="intro-section" class="intro-section">
+      <img
+        class="cover-img"
+        src="./src/assets/images/start-screen-img.png"
+        alt="illustration of a pollaroid picture"
+      />
+      <!-- <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        obcaecati quibusdam itaque at voluptates earum ratione adipisci delectus
+        inventore dicta repellendus maiores, animi minima cumque, corrupti est
+        aperiam alias excepturi!
+      </p> -->
+      <button id="open-button" class="open-button">
+        Open<i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </section>
+    <section id="form-modal" class="modal-backdrop hidden">
+      <form id="travel-form" class="travel-form">
+        <fieldset class="form">
+          <!-- form title  -->
+          <legend>
+            Tell us about your trip
+            <i id="close-button" class="close-button fa-solid fa-xmark"></i>
+          </legend>
+          <label for="destination">Destination: </label>
+          <!-- for="" should use for clarity whatever we named that column in the DB -->
+          <input type="text" name="destination" required />
+          <!-- date  -->
+          <label for="date_of_visit">When: </label>
+          <input type="date" name="date_of_visit" required />
+          <!-- length of visit  -->
+          <label for="stay_length">Number of days: </label>
+          <input type="number" name="stay_length" required />
+          <!-- favourite experience  -->
+          <label for="favourite_experience">Favourite experience: </label>
+          <input type="text" name="favourite_experience" required />
+          <!-- would visit again  -->
+          <label for="visit_again">Would visit again: </label>
+          <select name="visit_again" required>
+            <option value="" selected hidden>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <!-- general thoughts  -->
+          <label for="general_thoughts">General thoughts: </label>
+          <input type="text" name="general_thoughts" required />
+          <!-- <input type="number" min="1000" max="1000000" /> if it was a number we could add a min and a max -->
+        </fieldset>
+        <!-- submit button. outside the fieldset so I can fix it to the bottom of the page properly  -->
+        <button class="submit-button" type="submit">Submit entry</button>
+      </form>
+    </section>
+    <!-- top section of the entry board  -->
+    <section id="trips-view" class="trip-view hidden">
+      <p class="intro-text">
+        Scroll through my adventures and memories from around the world 🌍✈️
+        From cozy cafés in hidden corners to breathtaking views at the top of
+        the world. Every entry is a little snapshot of where I've been and what
+        made it special.
+      </p>
+      <button id="add-button" class="add-button">
+        <p>New Entry</p>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </section>
+    <!-- section with the entries  -->
+    <section id="trips-section" class="trips-container hidden"></section>
+  </body>
+</html>
